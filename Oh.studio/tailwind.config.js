@@ -10,8 +10,12 @@ export default {
       'white': '#ffffff',
       'gray': '#7f7f7f',
       'gray-light': '#e8e5e480',
-    }
-  },
+    },
+    gridTemplateColumns: {
+      '3': 'repeat(auto-fit, minmax(320px, 1fr))',
+      '2': 'repeat(auto-fit, minmax(250px, 1fr))',
+      '1': 'repeat(auto-fit, minmax(150px, 1fr))',
+    },
   plugins: [],
+  }
 }
-
