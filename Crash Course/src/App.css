@@ -1,0 +1,15 @@
+.big-box {
+  width: 12rem;
+  aspect-ratio: 1;
+  display: grid;
+  gap: 2px;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.mini-box {
+  width: 2rem;
+  aspect-ratio: 1;
+  background: gray;
+  border-radius: 10px;
+}
