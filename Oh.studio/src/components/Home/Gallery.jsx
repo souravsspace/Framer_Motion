@@ -58,24 +58,24 @@ export default function Gallery() {
   ];
   return (
     <main className="my-32 max-md:my-20 mx-8 max-md:mx-1 max-lg:mx-3">
-      <motion.div variants={transVari} className="grid grid-cols-00 place-items-center gap-y-10 max-md:gap-y-4 max-lg:gap-y-7">
+      <motion.div variants={transVari} className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-10 max-md:gap-y-4 max-lg:gap-y-7">
         {imagesGallery.map((image, index) => {
           return (
             <section variant={miniTransVari} key={index}>
-              <div className="rounded-2xl w-[45vw] aspect-[5/3] cursor-pointer relative group overflow-hidden:">
+              <div className="rounded-2xl mx-2 aspect-[5/3] cursor-pointer md:relative md:group md:overflow-hidden:">
                 <div>
                   {image.src && (
                     <img
                       src={image.src}
                       arl={image.alt}
-                      className="rounded-2xl w-[45vw] aspect-[5/3] object-cover object-center"
+                      className="rounded-2xl aspect-[5/3] object-cover object-center"
                     />
                   )}
                   {image.hsrc && (
                     <video
                       src={image.hsrc}
                       alt={image.alt}
-                      className="rounded-2xl w-[45vw] aspect-[5/3] object-cover object-center"
+                      className="rounded-2xl aspect-[5/3] object-cover object-center"
                       autoPlay
                       loop
                       muted
@@ -84,13 +84,13 @@ export default function Gallery() {
                 </div>
                 <a
                   className="
-                  absolute inset-0 text-xl opacity-0 rounded-2xl
-                  hover:opacity-100 hover:backdrop-blur-lg hover:bg-black/25 
-                  transition-all ease-linear duration-400"
+                  md:absolute md:inset-0 md:text-xl md:opacity-0 rounded-2xl
+                  md:hover:opacity-100 md:hover:backdrop-blur-lg md:hover:bg-black/25 
+                  md:transition-all md:ease-linear md:duration-400"
                 >
-                  <div className="flex justify-between m-4">
-                    <p className=" text-white">{image.alt}</p>
-                    <p className="rounded-full m-3 group-hover:m-0 p-3 bg-white transition-all ease-out duration-[300] delay-100">
+                  <div className="flex justify-between md:m-4 my-1">
+                    <p className=" text-black md:text-white">{image.alt}</p>
+                    <p className="hidden md:block rounded-full m-3 md:group-hover:m-0 p-3 bg-white transition-all ease-out duration-[300] delay-100">
                       <GoArrowUpRight className="text-black" />
                     </p>
                   </div>

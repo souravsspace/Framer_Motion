@@ -138,7 +138,7 @@ export default function Profile() {
         <motion.div
           variants={miniTransVari}
           >
-          <ul className="gap-y-9 my-[12rem] max-md:my-[8rem] grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-x-2">
+          <ul className="md:gap-y-9 gap-y-10 md:my-[12rem] my-[8rem] gap-x-2 grid grid-cols-2 md:grid-cols-3">
             {experience.map((item, index) => (
               <motion.li variants={miniTransVari} key={index} className="text-center">
                 <div className="gap-y-2 max-md:text-xs space-y-2">
