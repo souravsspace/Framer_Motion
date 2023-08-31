@@ -18,7 +18,7 @@ export default function Navigation() {
     }
   ]
   return (
-    <main className='flex items-center justify-center my-5 max-md:my-3 z-[999]'>
+    <main className='flex items-center justify-center my-5 max-md:my-3 z-[999] sticky'>
           <ul className='
             flex rounded-full fixed top-8 max-md:top-5 py-[2px] backdrop-blur-[10px] text-sm bg-gray-light'
             >

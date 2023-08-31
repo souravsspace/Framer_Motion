@@ -9,13 +9,46 @@ import { createContext } from "react"
 export const ThemeContext = createContext()
 
 function App() {
-    const init={ y: 0, opacity: 0 }
-    const anim={ y: -25, opacity: 1 }
-    const trans={ duration: 0.5 }
+    const transVari = {
+      visible: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            type: 'tween',
+            // type: 'spring',
+            // stiffness: 300,
+            // damping: 30,
+            when: 'beforeChildren',
+            // duration: 0.15,
+            // dalay: 0.05,
+            staggerChildren: 0.1,
+          }
+      },
+      hidden: {
+          y: '20vh',
+          opacity: 0,
+      },
+    }
+    const miniTransVari = {
+      visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: 'tween',
+          // type: 'spring',
+          // stiffness: 120,
+        }
+      },
+      hidden: {
+        y: '15vh',
+        opacity: 0,
+      }
+    }
+
   return (
     <Router>
           <Navigation /> 
-          <ThemeContext.Provider value={{init, anim, trans}}>
+          <ThemeContext.Provider value={{transVari, miniTransVari}}>
             <Routes>
                 <Route exact path="*" element={ <MainLayout /> }/>
                 <Route exact path="/" element={ <MainLayout /> }/>

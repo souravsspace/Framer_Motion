@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import BeforeFooter from "../BeforeFooter/BeforeFooter";
+import { ThemeContext } from "../../App";
+import { motion } from "framer-motion";
 
 export default function Profile() {
+  const { transVari, miniTransVari } = useContext(ThemeContext);
+
   const experience = [
     {
       title: "2017 — Present (main)",
@@ -72,13 +76,22 @@ export default function Profile() {
   ];
   return (
     <main className="px-14 max-md:px-3 max-lg:px-8">
-      <div className="container space-y-[13rem] mx-auto">
-        <div className="mt-64">
+      <motion.div
+        variants={transVari}
+        animate="visible"
+        initial="hidden"
+        className="container space-y-[13rem] mx-auto"
+      >
+        <motion.div 
+          variants={miniTransVari}
+          className="mt-64">
           <h1 className="text-center text-7xl max-md:text-4xl max-lg:text-5xl font-semibold">
             Hey 👋🏼 I'm Riya{" "}
           </h1>
-        </div>
-        <div className="flex justify-between gap-4 max-md:flex-col max-md:items-center">
+        </motion.div>
+        <motion.div 
+          variants={miniTransVari}
+          className="flex justify-between gap-10 max-md:gap-4 max-md:flex-col max-md:items-center">
           <img
             className="w-[100%] aspect-[5/4] rounded-lg object-cover"
             src="https://framerusercontent.com/images/wJINOk3BFAbQRx6ZySXfbltPxU.jpg"
@@ -87,47 +100,64 @@ export default function Profile() {
             className="w-[100%] aspect-[5/4] rounded-lg object-cover"
             src="https://framerusercontent.com/images/O3Foxt0XkzTsjGc74Ap0Hrxtz4c.jpg"
           />
-        </div>
-        <div className="text-center">
+        </motion.div>
+        <motion.div 
+          variants={miniTransVari}
+          className="text-center">
           <ul className="space-y-6 my-[12rem] max-md:my-[8rem]">
-            <li className="bg-gray-light text-black inline-block px-3 py-px rounded-full">
+            <motion.li 
+                variants={miniTransVari}
+                className="bg-gray-light text-black inline-block px-3 py-px rounded-full">
               About
-            </li>
-            <li className="text-4xl max-md:text-2xl mx-[20rem] max-md:mx-[1rem] max-lg:mx-[5rem] max-xl:mx-[10rem] font-semibold">
+            </motion.li>
+            <motion.li 
+                variants={miniTransVari}
+                className="text-4xl max-md:text-2xl mx-[20rem] max-md:mx-[1rem] max-lg:mx-[5rem] max-xl:mx-[10rem] font-semibold">
               A freelance designer based in the UK. I combine my experience in
               product and brand to solve problems, tell stories, and create
               compelling experiences.
-            </li>
+            </motion.li>
           </ul>
-        </div>
-        <div className="text-center">
+        </motion.div>
+        <motion.div 
+          variants={miniTransVari}
+          className="text-center">
           <ul className="space-y-6 my-[12rem] max-md:my-[8rem]">
-            <li className="bg-gray-light text-black inline-block px-3 py-px rounded-full">
+            <motion.li 
+                variants={miniTransVari}
+                className="bg-gray-light text-black inline-block px-3 py-px rounded-full">
               Experience
-            </li>
-            <li className="text-4xl max-md:text-2xl font-semibold">
+            </motion.li>
+            <motion.li 
+                variants={miniTransVari}
+                className="text-4xl max-md:text-2xl font-semibold">
               Where I've worked
-            </li>
+            </motion.li>
           </ul>
-        </div>
-        <div>
-          <ul className="space-y-6 my-[12rem] max-md:my-[8rem] grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-x-2">
+        </motion.div>
+        <motion.div
+          variants={miniTransVari}
+          >
+          <ul className="gap-y-9 my-[12rem] max-md:my-[8rem] grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-x-2">
             {experience.map((item, index) => (
-              <li key={index} className="text-center">
-                <div className="space-y-2 max-md:text-xs">
-                  <div className="text-gray">{item.title}</div>
-                  <div className="text-xl font-semibold">{item.name}</div>
-                  <div className="text-gray">{item.subtitle}</div>
-                  <div className="bg-gray-light text-black inline-block px-3 py-px rounded-full">{item.department}</div>
+              <motion.li variants={miniTransVari} key={index} className="text-center">
+                <div className="gap-y-2 max-md:text-xs space-y-2">
+                    <div className="text-gray">{item.title}</div>
+                    <div className="text-xl font-semibold">{item.name}</div>
+                    <div className="text-gray">{item.subtitle}</div>
+                    <div className="bg-gray-light text-black inline-block px-3 py-px rounded-full">
+                      {item.department}
+                    </div>
                 </div>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
         <div>
           <BeforeFooter />
-        </div>  <div>{/* for spacing */}</div>
-      </div>
+        </div>{" "}
+        <div>{/* for spacing */}</div>
+      </motion.div>
     </main>
   );
 }
