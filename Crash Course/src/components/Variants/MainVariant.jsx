@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import VariantsTwo from './VariantsTwo'
 
 export default function MainVariant() {
   const MainVariant = {

@@ -63,7 +63,7 @@ export default function Gallery() {
           return (
             <section variant={miniTransVari} key={index}>
               <div className="rounded-2xl mx-2 aspect-[5/3] cursor-pointer md:relative md:group md:overflow-hidden:">
-                <div>
+                <div className="aspect-[5/3]">
                   {image.src && (
                     <img
                       src={image.src}
@@ -78,7 +78,7 @@ export default function Gallery() {
                       className="rounded-2xl aspect-[5/3] object-cover object-center"
                       autoPlay
                       loop
-                      muted
+                      playsInline
                     />
                   )}
                 </div>

@@ -91,13 +91,13 @@ export default function Profile() {
         </motion.div>
         <motion.div 
           variants={miniTransVari}
-          className="flex justify-between gap-10 max-md:gap-4 max-md:flex-col max-md:items-center">
+          className="flex justify-between gap-10 max-md:gap-4 max-md:flex-row max-md:items-center">
           <img
-            className="w-[100%] aspect-[5/4] rounded-lg object-cover"
+            className="w-[100%] max-w:[500px] rounded-lg object-cover"
             src="https://framerusercontent.com/images/wJINOk3BFAbQRx6ZySXfbltPxU.jpg"
           />
           <img
-            className="w-[100%] aspect-[5/4] rounded-lg object-cover"
+            className="w-[100%] max-w:[500px] rounded-lg object-cover"
             src="https://framerusercontent.com/images/O3Foxt0XkzTsjGc74Ap0Hrxtz4c.jpg"
           />
         </motion.div>

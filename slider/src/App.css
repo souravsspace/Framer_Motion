@@ -1,0 +1,38 @@
+:root {
+  --br-100: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-container {
+  cursor: grab;
+  overflow-x: hidden;
+
+  margin: 10rem 10rem;
+  background-color: lightcoral;
+  border-radius: var(--br-100);
+}
+
+.slider--inner {
+  display: flex;
+  background-color: lightblue;
+  border-radius: var(--br-100);
+}
+
+.img--item {
+  min-height: 20rem;
+  min-width: 20rem;
+  padding: 2rem;
+
+}
+
+.img--item img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--br-100);
+  pointer-events: none;
+}
